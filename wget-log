@@ -1,0 +1,1285 @@
+--2015-01-24 11:51:41--  http://cache1.wine.com/labels/131229le.jpg
+Resolving cache1.wine.com... 103.243.14.227
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2779 (2.7K) [image/jpeg]
+Saving to: ‘131229le.jpg’
+
+     0K ..                                                    100%  491K=0.006s
+
+2015-01-24 11:51:46 (491 KB/s) - ‘131229le.jpg’ saved [2779/2779]
+
+--2015-01-24 11:51:46--  http://cache2.wine.com/labels/136823le.jpg
+Resolving cache2.wine.com... 103.243.14.227
+Reusing existing connection to cache1.wine.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 3459 (3.4K) [image/jpeg]
+Saving to: ‘136823le.jpg’
+
+     0K ...                                                   100% 14.9M=0s
+
+2015-01-24 11:51:49 (14.9 MB/s) - ‘136823le.jpg’ saved [3459/3459]
+
+--2015-01-24 11:51:49--  http://cache1.wine.com/labels/134794le.jpg
+Reusing existing connection to cache1.wine.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 3152 (3.1K) [image/jpeg]
+Saving to: ‘134794le.jpg’
+
+     0K ...                                                   100% 91.1M=0s
+
+2015-01-24 11:51:49 (91.1 MB/s) - ‘134794le.jpg’ saved [3152/3152]
+
+--2015-01-24 11:51:49--  http://cache1.wine.com/labels/132075le.jpg
+Reusing existing connection to cache1.wine.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 4044 (3.9K) [image/jpeg]
+Saving to: ‘132075le.jpg’
+
+     0K ...                                                   100% 6.27M=0.001s
+
+2015-01-24 11:51:50 (6.27 MB/s) - ‘132075le.jpg’ saved [4044/4044]
+
+--2015-01-24 11:51:50--  http://cache1.wine.com/labels/137467le.jpg
+Reusing existing connection to cache1.wine.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 3309 (3.2K) [image/jpeg]
+Saving to: ‘137467le.jpg’
+
+     0K ...                                                   100%  137M=0s
+
+2015-01-24 11:51:50 (137 MB/s) - ‘137467le.jpg’ saved [3309/3309]
+
+--2015-01-24 11:51:50--  http://cache1.wine.com/labels/130471le.jpg
+Reusing existing connection to cache1.wine.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 4392 (4.3K) [image/jpeg]
+Saving to: ‘130471le.jpg’
+
+     0K ....                                                  100% 10.8M=0s
+
+2015-01-24 11:51:51 (10.8 MB/s) - ‘130471le.jpg’ saved [4392/4392]
+
+--2015-01-24 11:51:51--  http://cache1.wine.com/labels/128016le.jpg
+Reusing existing connection to cache1.wine.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 3294 (3.2K) [image/jpeg]
+Saving to: ‘128016le.jpg’
+
+     0K ...                                                   100% 8.31M=0s
+
+2015-01-24 11:51:51 (8.31 MB/s) - ‘128016le.jpg’ saved [3294/3294]
+
+--2015-01-24 11:51:51--  http://cache1.wine.com/labels/130107le.jpg
+Reusing existing connection to cache1.wine.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 3463 (3.4K) [image/jpeg]
+Saving to: ‘130107le.jpg’
+
+     0K ...                                                   100% 70.1K=0.05s
+
+2015-01-24 11:51:51 (70.1 KB/s) - ‘130107le.jpg’ saved [3463/3463]
+
+--2015-01-24 11:51:51--  http://cache2.wine.com/labels/126543le.jpg
+Reusing existing connection to cache1.wine.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 5373 (5.2K) [image/jpeg]
+Saving to: ‘126543le.jpg’
+
+     0K .....                                                 100%  155M=0s
+
+2015-01-24 11:51:52 (155 MB/s) - ‘126543le.jpg’ saved [5373/5373]
+
+--2015-01-24 11:51:52--  http://cache1.wine.com/labels/128618le.jpg
+Reusing existing connection to cache1.wine.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 3534 (3.5K) [image/jpeg]
+Saving to: ‘128618le.jpg’
+
+     0K ...                                                   100% 56.2M=0s
+
+2015-01-24 11:51:52 (56.2 MB/s) - ‘128618le.jpg’ saved [3534/3534]
+
+--2015-01-24 11:51:52--  http://cache1.wine.com/labels/134813le.jpg
+Reusing existing connection to cache1.wine.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 2860 (2.8K) [image/jpeg]
+Saving to: ‘134813le.jpg’
+
+     0K ..                                                    100% 38.4M=0s
+
+2015-01-24 11:51:53 (38.4 MB/s) - ‘134813le.jpg’ saved [2860/2860]
+
+--2015-01-24 11:51:53--  http://cache1.wine.com/labels/136024le.jpg
+Reusing existing connection to cache1.wine.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 4664 (4.6K) [image/jpeg]
+Saving to: ‘136024le.jpg’
+
+     0K ....                                                  100% 98.8M=0s
+
+2015-01-24 11:51:53 (98.8 MB/s) - ‘136024le.jpg’ saved [4664/4664]
+
+--2015-01-24 11:51:53--  http://cache1.wine.com/labels/127745le.jpg
+Reusing existing connection to cache1.wine.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 3333 (3.3K) [image/jpeg]
+Saving to: ‘127745le.jpg’
+
+     0K ...                                                   100% 54.8M=0s
+
+2015-01-24 11:51:54 (54.8 MB/s) - ‘127745le.jpg’ saved [3333/3333]
+
+--2015-01-24 11:51:54--  http://cache1.wine.com/labels/129561le.jpg
+Reusing existing connection to cache1.wine.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 2844 (2.8K) [image/jpeg]
+Saving to: ‘129561le.jpg’
+
+     0K ..                                                    100% 29.8M=0s
+
+2015-01-24 11:51:54 (29.8 MB/s) - ‘129561le.jpg’ saved [2844/2844]
+
+--2015-01-24 11:51:54--  http://cache2.wine.com/labels/132919le.jpg
+Reusing existing connection to cache1.wine.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 3012 (2.9K) [image/jpeg]
+Saving to: ‘132919le.jpg’
+
+     0K ..                                                    100% 99.1M=0s
+
+2015-01-24 11:51:54 (99.1 MB/s) - ‘132919le.jpg’ saved [3012/3012]
+
+--2015-01-24 11:51:54--  http://cache2.wine.com/labels/133976le.jpg
+Reusing existing connection to cache1.wine.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 2643 (2.6K) [image/jpeg]
+Saving to: ‘133976le.jpg’
+
+     0K ..                                                    100%  210M=0s
+
+2015-01-24 11:51:55 (210 MB/s) - ‘133976le.jpg’ saved [2643/2643]
+
+--2015-01-24 11:51:55--  http://cache2.wine.com/labels/126347le.jpg
+Reusing existing connection to cache1.wine.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 3174 (3.1K) [image/jpeg]
+Saving to: ‘126347le.jpg’
+
+     0K ...                                                   100%  144M=0s
+
+2015-01-24 11:51:55 (144 MB/s) - ‘126347le.jpg’ saved [3174/3174]
+
+--2015-01-24 11:51:55--  http://cache1.wine.com/labels/128638le.jpg
+Reusing existing connection to cache1.wine.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 2991 (2.9K) [image/jpeg]
+Saving to: ‘128638le.jpg’
+
+     0K ..                                                    100%  178M=0s
+
+2015-01-24 11:51:56 (178 MB/s) - ‘128638le.jpg’ saved [2991/2991]
+
+--2015-01-24 11:51:56--  http://cache1.wine.com/labels/130091le.jpg
+Reusing existing connection to cache1.wine.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: 5650 (5.5K) [image/jpeg]
+Saving to: ‘130091le.jpg’
+
+     0K .....                                                 100%  108M=0s
+
+2015-01-24 11:51:56 (108 MB/s) - ‘130091le.jpg’ saved [5650/5650]
+
+--2015-01-24 11:51:56--  http://cache2.wine.com/labels/132687le.jpg
+Reusing existing connection to cache1.wine.com:80.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [image/jpeg]
+Saving to: ‘132687le.jpg’
+
+     0K ..                                                     19.7M=0s
+
+2015-01-24 11:51:57 (19.7 MB/s) - ‘132687le.jpg’ saved [2587]
+
+--2015-01-24 11:51:57--  http://cache1.wine.com/labels/128665le.jpg
+Reusing existing connection to cache1.wine.com:80.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:51:57--  http://cache1.wine.com/labels/132899le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:51:58--  http://cache1.wine.com/labels/132882le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:51:59--  http://cache1.wine.com/labels/132729le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:00--  http://cache2.wine.com/labels/132852le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:00--  http://cache2.wine.com/labels/129980le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:01--  http://cache2.wine.com/labels/129542le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:02--  http://cache2.wine.com/labels/137747le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:03--  http://cache1.wine.com/labels/129859le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:03--  http://cache2.wine.com/labels/131406le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:04--  http://cache1.wine.com/labels/123433le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:05--  http://cache1.wine.com/labels/128609le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:05--  http://cache1.wine.com/labels/129505le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:06--  http://cache2.wine.com/labels/134841le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:07--  http://cache2.wine.com/labels/128611le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:08--  http://cache2.wine.com/labels/128309le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:09--  http://cache2.wine.com/labels/134614le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:10--  http://cache2.wine.com/labels/130210le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:10--  http://cache2.wine.com/labels/128468le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:11--  http://cache2.wine.com/labels/134412le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:12--  http://cache2.wine.com/labels/124880le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:13--  http://cache2.wine.com/labels/136960le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:13--  http://cache1.wine.com/labels/132138le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:14--  http://cache1.wine.com/labels/128913le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:15--  http://cache1.wine.com/labels/127417le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:16--  http://cache1.wine.com/labels/128788le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:17--  http://cache1.wine.com/labels/138583le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:17--  http://cache1.wine.com/labels/129491le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:18--  http://cache1.wine.com/labels/132572le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:19--  http://cache1.wine.com/labels/135441le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:20--  http://cache1.wine.com/labels/127659le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:20--  http://cache1.wine.com/labels/135443le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:22--  http://cache1.wine.com/labels/137513le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:23--  http://cache1.wine.com/labels/133779le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:24--  http://cache2.wine.com/labels/131239le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:24--  http://cache2.wine.com/labels/132920le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:25--  http://cache1.wine.com/labels/130226le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:26--  http://cache1.wine.com/labels/129833le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:27--  http://cache2.wine.com/labels/136564le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:28--  http://cache2.wine.com/labels/127304le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:28--  http://cache2.wine.com/labels/130265le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:29--  http://cache2.wine.com/labels/132678le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:30--  http://cache1.wine.com/labels/127330le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:30--  http://cache2.wine.com/labels/121898le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:32--  http://cache2.wine.com/labels/136739le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:32--  http://cache1.wine.com/labels/129161le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:33--  http://cache2.wine.com/labels/129771le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:34--  http://cache2.wine.com/labels/128868le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:34--  http://cache2.wine.com/labels/137002le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:35--  http://cache1.wine.com/labels/126010le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:36--  http://cache2.wine.com/labels/134634le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:36--  http://cache2.wine.com/labels/131462le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:37--  http://cache1.wine.com/labels/131236le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:38--  http://cache2.wine.com/labels/130025le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:39--  http://cache1.wine.com/labels/129952le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:40--  http://cache2.wine.com/labels/117488le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:41--  http://cache2.wine.com/labels/131439le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:41--  http://cache2.wine.com/labels/132757le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:42--  http://cache2.wine.com/labels/125544le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:43--  http://cache1.wine.com/labels/129602le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:43--  http://cache2.wine.com/labels/134050le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:51--  http://cache2.wine.com/labels/128660le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:52--  http://cache2.wine.com/labels/136427le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:53--  http://cache2.wine.com/labels/128314le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:53--  http://cache1.wine.com/labels/134905le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:54--  http://cache1.wine.com/labels/132077le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:55--  http://cache1.wine.com/labels/134431le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:55--  http://cache1.wine.com/labels/124113le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:56--  http://cache2.wine.com/labels/135109le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:57--  http://cache2.wine.com/labels/131103le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:58--  http://cache2.wine.com/labels/129630le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:52:59--  http://cache1.wine.com/labels/132763le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:00--  http://cache2.wine.com/labels/128842le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:00--  http://cache1.wine.com/labels/134141le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:01--  http://cache2.wine.com/labels/131312le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:02--  http://cache1.wine.com/labels/131555le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:03--  http://cache1.wine.com/labels/128544le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:03--  http://cache1.wine.com/labels/133892le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:04--  http://cache2.wine.com/labels/131741le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:05--  http://cache1.wine.com/labels/131238le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:05--  http://cache2.wine.com/labels/131558le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:06--  http://cache2.wine.com/labels/132405le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:07--  http://cache2.wine.com/labels/131237le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:08--  http://cache1.wine.com/labels/129428le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:08--  http://cache1.wine.com/labels/130079le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:09--  http://cache2.wine.com/labels/132623le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:10--  http://cache2.wine.com/labels/131187le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:10--  http://cache2.wine.com/labels/128129le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:11--  http://cache2.wine.com/labels/135738le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:12--  http://cache1.wine.com/labels/132495le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:12--  http://cache1.wine.com/labels/128762le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:13--  http://cache2.wine.com/labels/124543le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:14--  http://cache2.wine.com/labels/128992le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:16--  http://cache1.wine.com/labels/129635le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:16--  http://cache2.wine.com/labels/117767le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:17--  http://cache2.wine.com/labels/129612le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:18--  http://cache1.wine.com/labels/134763le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:19--  http://cache2.wine.com/labels/124787le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:19--  http://cache1.wine.com/labels/138127le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:20--  http://cache1.wine.com/labels/129398le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:21--  http://cache2.wine.com/labels/132139le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:22--  http://cache1.wine.com/labels/128832le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:22--  http://cache1.wine.com/labels/131069le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:23--  http://cache1.wine.com/labels/129888le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:24--  http://cache2.wine.com/labels/129621le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:24--  http://cache2.wine.com/labels/130496le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:25--  http://cache1.wine.com/labels/128610le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:26--  http://cache2.wine.com/labels/132249le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:27--  http://cache1.wine.com/labels/130260le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:27--  http://cache1.wine.com/labels/133515le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:28--  http://cache1.wine.com/labels/121604le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:29--  http://cache2.wine.com/labels/132878le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:30--  http://cache1.wine.com/labels/122216le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:30--  http://cache1.wine.com/labels/124890le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:31--  http://cache2.wine.com/labels/130865le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:32--  http://cache1.wine.com/labels/134677le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:33--  http://cache1.wine.com/labels/134020le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:34--  http://cache1.wine.com/labels/130624le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:34--  http://cache1.wine.com/labels/132840le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:35--  http://cache2.wine.com/labels/134038le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:36--  http://cache1.wine.com/labels/128168le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:36--  http://cache2.wine.com/labels/126734le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:37--  http://cache2.wine.com/labels/130645le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:38--  http://cache2.wine.com/labels/133879le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:39--  http://cache1.wine.com/labels/122467le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:39--  http://cache2.wine.com/labels/113954le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:40--  http://cache2.wine.com/labels/134836le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:41--  http://cache1.wine.com/labels/135579le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:41--  http://cache1.wine.com/labels/105217le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:42--  http://cache2.wine.com/labels/128721le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:43--  http://cache1.wine.com/labels/126421le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:43--  http://cache1.wine.com/labels/131955le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:44--  http://cache2.wine.com/labels/138199le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:45--  http://cache1.wine.com/labels/122892le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:46--  http://cache1.wine.com/labels/134055le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:46--  http://cache1.wine.com/labels/127550le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:47--  http://cache1.wine.com/labels/138640le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:48--  http://cache2.wine.com/labels/135952le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:49--  http://cache2.wine.com/labels/137440le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:49--  http://cache1.wine.com/labels/129228le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:50--  http://cache1.wine.com/labels/128995le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:51--  http://cache1.wine.com/labels/135715le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:52--  http://cache2.wine.com/labels/127294le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:53--  http://cache1.wine.com/labels/124735le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:54--  http://cache1.wine.com/labels/131753le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:54--  http://cache2.wine.com/labels/129953le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:55--  http://cache2.wine.com/labels/133882le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:56--  http://cache1.wine.com/labels/132754le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:59--  http://cache2.wine.com/labels/129407le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:53:59--  http://cache2.wine.com/labels/134658le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:54:00--  http://cache1.wine.com/labels/129512le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:54:01--  http://cache1.wine.com/labels/129431le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:54:02--  http://cache1.wine.com/labels/133838le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:54:03--  http://cache2.wine.com/labels/125890le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:54:03--  http://cache2.wine.com/labels/130757le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:54:04--  http://cache1.wine.com/labels/129541le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:54:05--  http://cache2.wine.com/labels/125898le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:54:06--  http://cache1.wine.com/labels/128469le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:54:06--  http://cache1.wine.com/labels/135380le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:54:07--  http://cache2.wine.com/labels/132939le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:54:08--  http://cache2.wine.com/labels/130740le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:54:09--  http://cache1.wine.com/labels/130419le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:54:09--  http://cache2.wine.com/labels/123234le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:54:10--  http://cache2.wine.com/labels/124462le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:54:11--  http://cache1.wine.com/labels/129152le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:54:12--  http://cache2.wine.com/labels/124697le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:54:12--  http://cache1.wine.com/labels/135915le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:54:13--  http://cache2.wine.com/labels/128552le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:54:14--  http://cache2.wine.com/labels/129946le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:54:15--  http://cache1.wine.com/labels/138145le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:54:15--  http://cache1.wine.com/labels/134312le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:54:16--  http://cache1.wine.com/labels/122380le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:54:17--  http://cache1.wine.com/labels/137553le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:54:18--  http://cache1.wine.com/labels/138114le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:54:19--  http://cache2.wine.com/labels/132137le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:54:20--  http://cache1.wine.com/labels/127116le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:54:20--  http://cache2.wine.com/labels/127238le.jpg
+Connecting to cache2.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:54:21--  http://cache1.wine.com/labels/131128le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:54:22--  http://cache1.wine.com/labels/130983le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+--2015-01-24 11:54:23--  http://cache1.wine.com/labels/128465le.jpg
+Connecting to cache1.wine.com|103.243.14.227|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+
+    The file is already fully retrieved; nothing to do.
+
+FINISHED --2015-01-24 11:54:24--
+Total wall clock time: 2m 43s
+Downloaded: 20 files, 69K in 0.06s (1.20 MB/s)

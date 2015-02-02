@@ -1,0 +1,164 @@
+html(lang="en")
+	head
+		meta(charset="utf-8")
+		title 爱迪星（北京）科技有限公司
+		meta(name="description", content="二维码 防伪 物流 防窜货 PUF 物理 复制")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		link(rel="shortcut icon", href="images/favicon.ico")
+		link(href="bootstrap/css/bootstrap.css", rel="stylesheet")
+		link(href="fonts/font-awesome/css/font-awesome.css" rel="stylesheet")
+		link(href="css/animations.css", rel="stylesheet")
+		link(href="css/style.css", rel="stylesheet")
+
+
+
+	body.no-trans
+		//- <!-- scrollToTop -->
+		.scrollToTop: i.icon-up-open-big
+
+		//- <!-- header start -->
+		header.header.fixed.clearfix.navbar.navbar-fixed-top
+			.container
+				.row
+					.col-md-4
+						//- <!-- header-left start -->
+						//- <!-- ================ -->
+						.header-left.clearfix
+							.logo.smooth-scroll
+								a(href="#banner"): img(id="logo", src="images/logo-trans.png", height="10%", alt="Worthy")
+
+							.site-name-and-slogan.smooth-scroll
+								.site-name: a(href="#banner") 爱迪星
+								.site-slogan Identity of things
+
+
+					.col-md-8
+						.header-right.clearfix
+
+							//- <!-- main-navigation start -->
+							//- <!-- ================ -->
+							.main-navigation.animated
+								.navbar.navbar-default(role="navigation")
+									.container-fluid
+
+										//- <!-- Toggle get grouped for better mobile display -->
+										.navbar-header
+											button.navbar-toggle(
+												type="button",
+												data-toggle="collapse",
+												data-target="#navbar-collapse-1"
+											)
+												span.sr-only Toggle navigation
+												span.icon-bar
+												span.icon-bar
+												span.icon-bar
+											
+										
+
+										<!-- Collect the nav links, forms, and other content for toggling -->
+										.collapse.navbar-collapse.scrollspy.smooth-scroll#navbar-collapse-1
+											ul.nav.navbar-nav.navbar-right
+												li.active: a(href="#banner") 回到首页
+												li: a(href="#about") 关于我们
+												li: a(href="#services") 产品服务
+												li: a(href="#clients") 客户案例
+												li: a(href="#contact") 联系方式
+		
+		<!-- header end -->
+
+		<!-- banner start -->
+		<!-- ================ -->
+		#banner.banner
+			.banner-image
+			.banner-caption: .container: .row
+				.col-md-8.col-md-offset-2.object-non-visible(data-animation-effect="fadeIn")
+					h1.text-center 爱迪星
+					p.lead.text-center
+						|为您的产品提供全面的识别与防伪保障
+						br
+						|以及产品信息追踪服务
+						
+		<!-- section start -->
+		<!-- ================ -->
+		.section.clearfix.object-non-visible(data-animation-effect="fadeIn")
+			.container
+				.row
+					.col-md-12
+						h1#about.title 关于我们
+						p.lead 爱迪星致力于为制造业和零售业提供可靠的产品信息追踪和存储服务，帮助您解决产品防伪，物流防窜货的困扰，同时也为您的消费者提供产品信息和展示服务
+						.space
+						.row
+							.col-md-4
+								img(src="images/about-1.jpeg", alt="")
+								.space
+								|以云服务为依托，我们提供货物的入库，品质鉴定，物流追踪和用户反馈等数据的集中管理。
+							
+							.col-md-4
+								img(src="images/about-2.jpg", alt="")
+								.space
+								|通过独有的基于(物性)不可复制特性的标签识别技术，为您的产品在其整个生命周期内打上独一的标识
+
+							.col-md-4
+								iframe(width="300", height="300", frameborder="0", src="https://www.shadertoy.com/embed/MdBGWG?gui=false&t=10&paused=false")
+								.space
+								|基于先进的页面3D展示技术，在向用户提供产品信息追踪服务的同时，也精细而动态地体现产品的最佳原貌
+						.space
+						
+
+
+		footer#footer
+			.footer.section
+				.container
+					h1.title.text-center#contact 联系我们
+					.space
+					.row
+						.col-sm-6
+							.footer-content
+								.large 如果您对我们提供的服务感兴趣，请联系我们
+								ul.list-icons
+									li: i.fa.fa-map-marker.pr-10 北京市西城区新德街20号610室
+									li: i.fa.fa-phone.pr-10 +86 176-0085-2337
+									li: i.fa.fa-envelope-o.pr-10 customer@idxing.com.cn
+								
+								
+							
+						
+						.col-sm-6
+							.footer-content
+								form(role="form", id="footer-form")
+									.form-group.has-feedback
+										label.sr-only(for="name2") 姓名
+										input.form-control(type="text", id="name2", placeholder="请留下您的姓名", name="name2", required)
+										i.fa.fa-user.form-control-feedback
+									
+									.form-group.has-feedback
+										label.sr-only(for="email2") 邮箱
+										input.form-control(type="email", id="email2", placeholder="以及您的邮箱", name="email2", required)
+										i.fa.fa-envelope.form-control-feedback
+									
+									.form-group.has-feedback
+										label.sr-only(for="message2") 附言
+										textarea.form-control(rows="8", id="message2", placeholder="还有任何想对我们说的", name="message2", required)
+										i.fa.fa-pencil.form-control-feedback
+									
+									input.btn.btn-default(type="submit", value="Send")
+				
+			.subfooter
+				.container
+					.row
+						.col-md-12
+							p.text-center 爱迪星（北京）科技有限公司 ©2015
+
+
+	script(type="text/javascript", src="plugins/jquery.min.js")
+	script(type="text/javascript", src="bootstrap/js/bootstrap.min.js")
+	script(type="text/javascript", src="plugins/modernizr.js")
+	script(type="text/javascript", src="plugins/isotope/isotope.pkgd.min.js")
+	script(type="text/javascript", src="plugins/jquery.backstretch.min.js")
+	script(type="text/javascript", src="plugins/jquery.appear.js")
+	script(type="text/javascript", src="js/three.min.js")
+	script(type="text/javascript", src="js/template.js")
+	script(type="text/javascript", src="js/custom.js")
+	
+	
+

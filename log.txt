@@ -1,0 +1,2 @@
+Continuing in background, pid 38458.
+Output will be written to ‘wget-log’.
