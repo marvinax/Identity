@@ -19,7 +19,8 @@ body
   .container
     each entry in data
       .col-md-3
-        img(src='./wine_gallery/'+entry.src+'l.jpg')
+        a(href='/wine?id='+entry._id)
+          img(src='./wine_gallery/'+entry.src+'l.jpg')
         a(href='/wine?id='+entry._id)
           h3=entry.name
         p=entry.place

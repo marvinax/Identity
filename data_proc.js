@@ -7,6 +7,7 @@ data_to_write = (data.split('\n,\n').map(function(e){
         var kvp = e.split(": "); 
         obj[kvp[0]] = kvp[1];
     });
+    obj.access = [];
     return obj;
 }));
 console.log(data_to_write);
