@@ -51,7 +51,8 @@ app.get('/wine', function(req, res){
                 // Insert the new user profile into the collection
                 collection.find().skip((pages -1) * range).limit(range).toArray(function(err, result){
                     err && res.send(err);
-                    res.render('catalog', result);
+                    res.render('catalog', {data: result});
+                    MongoDB.close();
                 });
             });
         });
