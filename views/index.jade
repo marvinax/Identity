@@ -1,5 +1,14 @@
-extends layout
+html(lang="en")
+	head
+		meta(charset="utf-8")
+		title('Deziner')
+		link(rel="stylesheet", href="./stylesheets/bootstrap.min.css")
+		link(rel="stylesheet", href='./stylesheets/fileinput.min.css')
 
-block content
-  h1= title
-  p Welcome to #{title}
+	body.container(style='{margin:20 20px;}')
+		p
+		div.upload-holder: input#upload-image(type="file")
+
+	script(src="./javascripts/vendors/jquery-2.1.3.min.js")
+	script(src="./javascripts/vendors/fileinput.min.js")
+	script(src="./javascripts/main.js")
