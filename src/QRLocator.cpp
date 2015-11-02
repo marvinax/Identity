@@ -92,6 +92,8 @@ void rearrangeAlignMarkers(	vector<vector<Point>>& contours, vector<Vec4i>& hier
 	arrangedMassCenters.push_back(massCenters[bottomLeft]);
 	arrangedMassCenters.push_back(massCenters[topRight]);
 
+	std::cout << arrangedMassCenters << std::endl;
+
 	for (int i = 0; i < 3; i++){
 		approxPolyDP(findOuterContour(contours, hierarchy, indices[i]), rectangles[i], 10., true);
 		sortRectangleCorners(rectangles[i], massCenters[i]);
