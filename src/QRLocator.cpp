@@ -95,8 +95,8 @@ void rearrangeAlignMarkers(	vector<vector<Point>>& contours, vector<Vec4i>& hier
 	std::cout << arrangedMassCenters << std::endl;
 
 	for (int i = 0; i < 3; i++){
-		approxPolyDP(findOuterContour(contours, hierarchy, indices[i]), rectangles[i], 10., true);
-		sortRectangleCorners(rectangles[i], massCenters[i]);
+		approxPolyDP(findOuterContour(contours, hierarchy, arrangedIndices[i]), rectangles[i], 10., true);
+		sortRectangleCorners(rectangles[i], arrangedMassCenters[i]);
 	}
 }
 
@@ -150,7 +150,7 @@ void findAlignMarkerContours(
 		for(; hierarchy[k][2] != -1; k = hierarchy[k][2], c = c+1){}
 		
 		if (c > 4) {
-			alignMarkerMassCenters.push_back(massCenters[i]);
+			alignMarkerMassCenters.push_back(massCenters[k]);
 			alignMarkerContourIndices.push_back(k);
 		}
 
@@ -160,12 +160,12 @@ void findAlignMarkerContours(
 
 void findFourCorners(Mat &image, vector<vector<Point>>& rectangles, vector<Point2f>& corners){
 
-	corners.push_back(Point2f(rectangles[0][2].x, rectangles[0][2].y));
-	corners.push_back(Point2f(rectangles[1][1].x, rectangles[1][1].y));
-	corners.push_back(Point2f(rectangles[2][0].x, rectangles[2][0].y));
+	corners.push_back(Point2f(rectangles[0][1].x, rectangles[0][1].y));
+	corners.push_back(Point2f(rectangles[1][0].x, rectangles[1][0].y));
+	corners.push_back(Point2f(rectangles[2][2].x, rectangles[2][2].y));
 
 	for (int i = 0; i < 3; i++){
-		circle(image, corners[i], 20, Scalar(i*127), -1);
+		circle(image, corners[i], 20, Scalar(127*i), -1);
 	}	
 }
 
