@@ -1,6 +1,86 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+@import url('./animations.css');
+/*
+A custom Bootstrap 3.1 template
+from http://bootply.com
+
+This CSS code should follow the 'bootstrap.css'
+in your HTML file.
+
+license: MIT
+author: bootply.com
+*/
+
+@media (min-width: @screen-sm-min) {
+    .text-sm-left { text-align: left; }
+    .text-sm-right { text-align: right; }
+    .text-sm-center { text-align: center; }
+    .text-sm-justify { text-align: justify; }
+}
+
+html,body {
+}
+
+.icon-bar {
+	background-color:#fff;
+}
+
+.navbar-trans {
+	background-color:#279ddd;
+    color:#fff;
+}
+
+.navbar-trans li>a:hover,.navbar-trans li>a:focus,.navbar-trans li.active {
+	background-color:#38afef;
+}
+
+.navbar-trans a{
+    color:#fefefe;
+}
+
+.navbar-trans .form-control:focus {
+	border-color: #eee;
+	outline: 0;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(100,100,100,0.6);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(100,100,100,0.6);
+}
+
+section {
+	padding-top:20px;  
+    padding-bottom:20px; 
+    min-height:calc(100% - 1px);
+}
+
+.v-center {
+    padding-top:10%;
+    font-size:70px;
+}
+  
+.well {
+	border-color:transparent;
+}
+
+a.list-group-item.active,[class*='-info'] {
+	background-color: #168ccc;
+    color:#fff;
+}
+
+.qrcode {
+    margin: auto auto;
+}
+
+.logo {
+	font-size: 20vw;
+
+	letter-spacing: -.05em;
+}
+
+.text {
+	font-size: 4.0em;
+	letter-spacing: -0.01em;
+}
+
+.top{
+	margin-top: 10px;
 }
 
 a {

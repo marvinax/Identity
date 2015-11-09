@@ -2,13 +2,42 @@ html(lang="en")
 	head
 		meta(charset="utf-8")
 		title('Deziner')
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+		link(href='http://www.youziku.com/webfont/NameCSS/46993', rel='stylesheet', type='text/css')
+		link(rel="stylesheet", href="./stylesheets/style.css")
 		link(rel="stylesheet", href="./stylesheets/bootstrap.min.css")
 		link(rel="stylesheet", href='./stylesheets/fileinput.min.css')
 
-	body.container(style='{margin:20 20px;}')
-		p
-		div.upload-holder: input#upload-image(type="file")
+	body
+		section#home.container-fluid
+			div.jumbotron
+				div.text-center.css46993.logo Idenator
+
+			div.row
+				div.top.col-md-4.col-sm-6.text-center: div#qr.btn.btn-primary.btn-lg(target="qrgen")
+					i.glyphicon.glyphicon-qrcode
+					|   生成新二维码
+				div.top.col-md-4.col-sm-6.text-center: div#upload-orig.btn.btn-primary.btn-lg(target="upload-original-page")
+					i.glyphicon.glyphicon-upload
+					|   上传原始图像
+				div.top.col-md-4.col-sm-6.text-center: input#upload-tobetest.file-loading(type="file", multiple=false)
+
+		section#qrgen.container-fluid
+			div.row
+				div.col-md-4.col-sm-6.text-center: canvas#drawingArea.drawingArea
+				div.col-md-4.col-sm-6.text-center
+					| 已经为您生成新的二维码标签
+					p
+					div#generate-qr.btn.btn-primary.btn
+						| 保存
+			div#qrcode.qrcode(style='{display:invisible;}')
+
+		section#upload-original-page.container-fluid
+			div.row
+				div.col-md-4.col-sm-6.text-center: input#upload-original.file-loading(type="file", multiple=true)
 
 	script(src="./javascripts/vendors/jquery-2.1.3.min.js")
+	script(src="./javascripts/vendors/bootstrap.min.js")
+	script(src="./javascripts/vendors/qrcode.min.js")
 	script(src="./javascripts/vendors/fileinput.min.js")
 	script(src="./javascripts/main.js")

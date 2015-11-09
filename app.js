@@ -32,30 +32,43 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 
-app.post('/uploadImage/', nodefu(), function(req, res, next){
+app.post('/uploadOriginal/', nodefu(), function(req, res, next){
+  req.files.file_data.toFile(path.join(__dirname, 'images/groundtruths/'),
+    function(err, uploadedPath){
+      if(!err){
+        alignator.getWarpedLabelFromPath(uploadedPath, uploadedPath);
+
+        res.send({
+          res: 'ok'
+        })
+      }
+  })
+});
+
+app.post('/uploadTobeTest/', nodefu(), function(req, res, next){
   req.files.file_data.toFile(path.join(__dirname, 'public/images/'),
     function(err, uploadedPath){
       if(!err){
         alignator.getWarpedLabelFromPath(uploadedPath, uploadedPath);
 
-        // var max_score = 0,
-        //     max_id;        
-        // fs.readdirSync("./images/scanned transformed").forEach(function(im){
-        //   var score = alignator.match(
-        //       uploadedPath,
-        //       path.join(__dirname, "images/scanned transformed/")+im,
-        //       path.join(__dirname, "public/images/"+im.split('.')[0]+'.jpg')
-        //     );
-        //   if (score >= max_score){
-        //     max_score = score;
-        //     max_id = im.split('.')[0];
-        //   }
-        // });
+        var max_score = 0,
+        max_id;        
+        fs.readdirSync("./images/scanned transformed").forEach(function(im){
+          var score = alignator.match(
+            uploadedPath,
+            path.join(__dirname, "images/scanned transformed/")+im,
+            path.join(__dirname, "public/images/"+im.split('.')[0]+'.jpg')
+            );
+          if (score >= max_score){
+            max_score = score;
+            max_id = im.split('.')[0];
+          }
+        });
 
         res.send({
           res : 'ok',
-          // score : max_score,
-          // file : path.basename(max_id+'.jpg')
+          score : max_score,
+          file : path.basename(max_id+'.jpg')
         });            
       }
     })

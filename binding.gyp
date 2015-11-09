@@ -6,7 +6,8 @@
 			"src/alignator.cpp",
 			"src/customResize.cpp",
 			"src/compensateGradient.cpp",
-			"src/QRLocator.cpp"
+			"src/QRLocator.cpp",
+			"src/SubPixelWarp.cpp"
 		],
 		"include_dirs" : [
 			"<!(node -e \"require('nan')\")",

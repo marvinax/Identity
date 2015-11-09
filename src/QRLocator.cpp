@@ -164,8 +164,13 @@ void findFourCorners(Mat &image, vector<vector<Point>>& rectangles, vector<Point
 	corners.push_back(Point2f(rectangles[1][0].x, rectangles[1][0].y));
 	corners.push_back(Point2f(rectangles[2][2].x, rectangles[2][2].y));
 
-	for (int i = 0; i < 3; i++){
-		circle(image, corners[i], 20, Scalar(127*i), -1);
+	Point2f fourthPoint;
+	intersection(rectangles[1][0], rectangles[1][3], rectangles[2][2], rectangles[2][3], fourthPoint);
+
+	corners.push_back(fourthPoint);
+
+	for (int i = 0; i < 4; i++){
+		circle(image, corners[i], 20, Scalar(64*i), -1);
 	}	
 }
 
@@ -195,7 +200,5 @@ vector<Point2f> findQRAlignMarker(Mat &image){
 	vector<Point2f> corners;
 	findFourCorners(image, rectangles, corners);
 
-	vector<Point2f> res;
-
-	return res;
+	return corners;
 }
