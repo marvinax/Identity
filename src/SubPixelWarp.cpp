@@ -38,7 +38,7 @@ cv::Point2f computeIntersect(cv::Mat &a, cv::Mat &b)
 // be multiple Hough lines for each border line, There
 // are multiple estimated intersection points for each
 // real one.
-std::vector<cv::Point2f> getAnchors(cv::Mat &lines){
+std::vector<cv::Point2f> getCandidateAnchors(cv::Mat &lines){
     cv::Mat rowI, rowJ;
     cv::Point2f point;
     std::vector<cv::Point2f> pointList;
@@ -59,7 +59,7 @@ std::vector<cv::Point2f> getAnchors(cv::Mat &lines){
 
 // A helper function sorts the points by the polar angle
 // with the averaged center point.
-std::vector<cv::Point2f> reformPoints(cv::Mat &centerPoints){
+std::vector<cv::Point2f> sortPoints(cv::Mat &centerPoints){
     // Notably, this function doesn't limit the number of points.
     // reformPoints always works if the anchor points build up a convex polygon.
     
@@ -84,3 +84,25 @@ std::vector<cv::Point2f> reformPoints(cv::Mat &centerPoints){
     
     return points;
 }
+
+
+void getAnchors(cv::Mat &image, std::vector<cv::Point2f>& clusteredAnchors){
+    cv::Mat forLines;
+    image.copyTo(forLines);
+    removeQRRegion(forLines, 3);
+    cv::threshold(forLines, forLines, 128, 255, cv::THRESH_BINARY);
+
+    cv::Mat lines;
+    cv::HoughLinesP(forLines, lines, 1, CV_PI/180, 10, 30);
+    lines = lines.reshape(0, lines.cols);
+    
+    std::vector<cv::Point2f> anchors = getCandidateAnchors(lines);
+    
+    cv::Mat labels;
+    cv::Mat anchorMatrix(anchors);
+    cv::Mat clusteredAnchorMatrix;
+
+    cv::kmeans(anchorMatrix, 8, labels, cv::TermCriteria(CV_TERMCRIT_ITER|CV_TERMCRIT_EPS, 10000, 0.0001), 8, cv::KMEANS_PP_CENTERS, clusteredAnchorMatrix);
+    clusteredAnchors = sortPoints(clusteredAnchorMatrix);
+}
+

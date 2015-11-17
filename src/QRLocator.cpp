@@ -23,6 +23,7 @@ int findTopLeft(vector<Point2f>& points){
 	double BC = norm(points[1] - points[2]);
 	double CA = norm(points[2] - points[0]);
 
+
 	if ( AB > BC && AB > CA ) {
 		return 2;
 	}
@@ -51,10 +52,14 @@ int findTopRight(vector<Point2f>& points){
 	}
 }
 
-vector<Point> findOuterContour(vector<vector<Point>>& contours, vector<Vec4i>& hierarchy, int index){
-	int out, count;
-	for(count = 0, out = index; count < 5; count += 1, out = hierarchy[out][3]){}
-	return contours[out];
+// A function that turns the outermost contour of the align markers into rectangle for further calculation.
+// such as sorting and rearranging
+void getRectangles(	vector<vector<Point>>& contours, vector<int>&indices,
+					vector<vector<Point>>& rectangles){
+
+	for (int i = 0; i < 3; i++){
+		approxPolyDP(contours[indices[i]], rectangles[i], 10., true);
+	}
 }
 
 void sortRectangleCorners(vector<Point>& rectangle, Point2f m){
@@ -69,92 +74,103 @@ void sortRectangleCorners(vector<Point>& rectangle, Point2f m){
 	});
 }
 
-// A function to find the outermost rectangles of the align marker. It takes contours and
-// hierarchy as argument, along with the list of the indices of the innermost contours.
-// Firstly, it arranges the sequence of the three markers, with the order of top-left,
-// bottom-left and then top-right. Then the points within the rectangles are arranged by
-// the angle in polar coordinate.
-void rearrangeAlignMarkers(	vector<vector<Point>>& contours, vector<Vec4i>& hierarchy, vector<int>&indices,
-						vector<Point2f>& massCenters, vector<vector<Point>>& rectangles){
 
-	vector<int> arrangedIndices(0);
-	vector<Point2f> arrangedMassCenters(0);
+void rearrangeRectangles(vector<vector<Point>>& rectangles){
 
-	int topLeft = findTopLeft(massCenters);
-	int topRight = findTopRight(massCenters);
-	int bottomLeft = 3 - topLeft - topRight;
+	vector<Moments> rectMoments(rectangles.size());
+	vector<Point2f> massCenters(rectangles.size());
 
-	arrangedIndices.push_back(indices[topLeft]);
-	arrangedIndices.push_back(indices[bottomLeft]);
-	arrangedIndices.push_back(indices[topRight]);
+	for( unsigned long i = 0; i < rectangles.size(); i++ ) {
+		rectMoments[i] = moments( rectangles[i], false ); 
+		massCenters[i] = Point2f(
+			rectMoments[i].m10/rectMoments[i].m00,
+			rectMoments[i].m01/rectMoments[i].m00
+		);
 
-	arrangedMassCenters.push_back(massCenters[topLeft]);
-	arrangedMassCenters.push_back(massCenters[bottomLeft]);
-	arrangedMassCenters.push_back(massCenters[topRight]);
-
-	std::cout << arrangedMassCenters << std::endl;
-
-	for (int i = 0; i < 3; i++){
-		approxPolyDP(findOuterContour(contours, hierarchy, arrangedIndices[i]), rectangles[i], 10., true);
-		sortRectangleCorners(rectangles[i], arrangedMassCenters[i]);
+		sortRectangleCorners(rectangles[i], massCenters[i]);
 	}
+
+	int topLeft, topRight, bottomLeft;
+
+	topLeft = findTopLeft(massCenters);
+	topRight = findTopRight(massCenters);
+	bottomLeft = 3 - topLeft - topRight;
+
+	vector<vector<Point>> sortedRectangles;
+	sortedRectangles.push_back(rectangles[topLeft]);
+	sortedRectangles.push_back(rectangles[bottomLeft]);
+	sortedRectangles.push_back(rectangles[topRight]);
+	rectangles = sortedRectangles;
+
+	for (unsigned long i = 0 ; i < rectangles.size(); i++){
+		std::cout << rectangles[i] << std::endl;
+	}
+
 }
 
 // Very initial operation on the detrended (gradient-compensated) image. It finds 
 // the edge of the QR align markers, and then find the contours.
-void findAllContours(Mat &image, vector<vector<Point>> &contours, vector<Vec4i> &hierarchy){
+void findAllContours(	Mat &image, vector<vector<Point>> &contours, vector<Vec4i> &hierarchy,
+						int dilationSize
+					){
 	Mat edges;
 	image.copyTo(edges);
 
+	// When using some paper with special material, the ink could not stick to some part
+	// on the paper, which may lead a small contour appear on the center of align marker.
+	// the threshold should be adjustable from the outside, or adaptively adjusted.
 	threshold(edges, edges, 100, 255, THRESH_BINARY);
+
 	// Canny detects the outline of the black border on the tag. While the
 	// Sobel detecter could be only with diameter of 3. However, the basic
 	// Canny detector doesn't gurarantee that the contour is continuous.
 	// Thus we do some morphological transform on the image, so that to
 	// enforce the enclosed border connected.
-	Canny(edges, edges, 100, 200, 3);
+	Canny(edges, edges, 60, 200, 3);
+	imwrite("./public/images/Canny.jpg", edges);
 
 	// here we do a simple morphological opening transform make the border
 	// more smooth and clear. 
-	int dSize = 2, eSize = 1;
+	// 
+	// NOTE: for scanned original patch, the dilation size should be no more
+	// 		 than 1. Since excessive dilation will cause less contours. The
+	// 		 dilation size should be proportional to the scale of the image.
+	int dSize = dilationSize, eSize = 1;
 	Mat dElem = getStructuringElement(MORPH_RECT, Size( 2*dSize + 1, 2*dSize+1 ), Point( dSize, dSize ) );
 	Mat eElem = getStructuringElement(MORPH_RECT, Size( 2*eSize + 1, 2*eSize+1 ), Point( eSize, eSize ) );	
 	dilate(edges, edges, dElem);
 	erode(edges, edges, eElem);
+	imwrite("./public/images/morphed.jpg", edges);
 
 	// After applying the Canny operation, we will have five layer of contours
 	// the contour topological information will be stored in `hierarchy` table.
 	findContours(edges, contours, hierarchy, RETR_TREE, CHAIN_APPROX_NONE);
+	imwrite("./public/images/contours.jpg", edges);
+
 }
 
 void findAlignMarkerContours(
 	vector<vector<Point>>& contours, vector<Vec4i>& hierarchy,
-	vector<Point2f>& alignMarkerMassCenters, vector<int>& alignMarkerContourIndices
+	vector<int>& alignMarkerContourIndices
 ){
 	// massCenters will be stored, which will be further used for sorting the
 	// points over the rectangles.
-	vector<Moments> contourMoments(contours.size());
-	vector<Point2f> massCenters(contours.size());
-
-	for( unsigned long i = 0; i < contours.size(); i++ ) {
-		contourMoments[i] = moments( contours[i], false ); 
-		massCenters[i] = Point2f(
-			contourMoments[i].m10/contourMoments[i].m00,
-			contourMoments[i].m01/contourMoments[i].m00
-		);
-	}
 
 	for( int i = 0; i < (int)(contours.size()); i++ ) {
 		int k = i, c = 0;
 
-		for(; hierarchy[k][2] != -1; k = hierarchy[k][2], c = c+1){}
+		for(; hierarchy[k][2] != -1; k = hierarchy[k][2], c++){}
 		
 		if (c > 4) {
-			alignMarkerMassCenters.push_back(massCenters[k]);
+
+			for(; c > 0; k = hierarchy[k][3], c--){}
+
 			alignMarkerContourIndices.push_back(k);
 		}
 
-	} 
+	}
+
+
 
 }
 
@@ -170,35 +186,47 @@ void findFourCorners(Mat &image, vector<vector<Point>>& rectangles, vector<Point
 	corners.push_back(fourthPoint);
 
 	for (int i = 0; i < 4; i++){
-		circle(image, corners[i], 20, Scalar(64*i), -1);
+		circle(image, corners[i], 15, Scalar(64*i), -1);
 	}	
+
+	imwrite("./public/images/marked.jpg", image);
 }
 
-vector<Point2f> findQRAlignMarker(Mat &image){
+vector<Point2f> findQRAlignMarker(Mat &image, int dilationSize){
+
+	std::cout << "findQRAlignMarker-Begin" << std::endl;
 
 	vector<vector<Point>> contours;
 	vector<Vec4i> hierarchy;
-	findAllContours(image, contours, hierarchy);
+	findAllContours(image, contours, hierarchy, dilationSize);
+	std::cout << "findQRAlignMarker-All Contours Found" << std::endl;
+
 
 	// Iterate over the whole contour topogical tree and find nested
 	// contour. We need both the mass center and the index of the
 	// innermost contour of the align markers. Mass centers are for finding
 	// the farthest point of the outermost contour of the align markers,
 	// in order to find the bound of QR area.
-	vector<Point2f> alignMarkerMassCenters(0);
+	// vector<Point2f> alignMarkerMassCenters(0);
 	vector<int>     alignMarkerContourIndices(0);
-	findAlignMarkerContours(contours, hierarchy, alignMarkerMassCenters, alignMarkerContourIndices);
-
+	findAlignMarkerContours(contours, hierarchy, alignMarkerContourIndices);
+	std::cout << "findQRAlignMarker-Align Marker Contours Found" << std::endl;
+	for(unsigned long i = 0; i < alignMarkerContourIndices.size(); i++){
+	std::cout << alignMarkerContourIndices[i] << " "<< std::endl;		
+	}
 	// If we didn't collected enough align markers, we'll return (and
 	// supposed to have an error message). Otherwise we are going
 	// re-arrange the points with a sequence of top-left, bottom-left,
 	// bottom-right.
 	// 
 	vector<vector<Point>> rectangles(3, vector<Point>(0));
-	rearrangeAlignMarkers(contours, hierarchy, alignMarkerContourIndices, alignMarkerMassCenters, rectangles);
+	getRectangles(contours, alignMarkerContourIndices, rectangles);
+	rearrangeRectangles(rectangles);
 
 	vector<Point2f> corners;
 	findFourCorners(image, rectangles, corners);
+
+	std::cout << "findQRAlignMarker-End" << std::endl;
 
 	return corners;
 }

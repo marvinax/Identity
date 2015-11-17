@@ -8,4 +8,4 @@
 #include <iostream>
 #include <math.h>
 
-cv::vector<cv::Point2f> findQRAlignMarker(cv::Mat &image);
+cv::vector<cv::Point2f> findQRAlignMarker(cv::Mat &image, int dilationSize);

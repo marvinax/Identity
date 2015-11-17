@@ -15,6 +15,10 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
+var mongo = require('mongodb');
+var client = mongo.MongoClient;
+var mongoLink = "mongodb://localhost:27017/idenator"
+
 var app = express();
 
 // view engine setup
@@ -32,44 +36,140 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 
-app.post('/uploadOriginal/', nodefu(), function(req, res, next){
-  req.files.file_data.toFile(path.join(__dirname, 'images/groundtruths/'),
-    function(err, uploadedPath){
-      if(!err){
-        alignator.getWarpedLabelFromPath(uploadedPath, uploadedPath);
+app.get('/createEntries', function(req, res, next){
 
-        res.send({
-          res: 'ok'
-        })
-      }
+  client.connect(mongoLink, function(err, db){
+    if (!err){
+      console.log("Connected");
+      console.log(req.query);
+      var ids = req.query.ids.split(' ');
+
+      ids.forEach(function(e, i){
+        db.collection('entries').insert({
+          author : req.query.author,
+          isbn : req.query.isbn,
+          title : req.query.title,
+          print : req.query.print,
+          edition : req.query.edition,
+          entry : e
+        });
+      })
+      
+    } else {
+      console.log("Connection failed.");
+    }
+
+    db.close();
+  });
+
+  res.send({
+    res: 'ok'
   })
 });
 
-app.post('/uploadTobeTest/', nodefu(), function(req, res, next){
-  req.files.file_data.toFile(path.join(__dirname, 'public/images/'),
-    function(err, uploadedPath){
-      if(!err){
-        alignator.getWarpedLabelFromPath(uploadedPath, uploadedPath);
+var generateFileId = function(len) {
+  var arr = new Uint8Array((len || 40) / 2);
+  window.crypto.getRandomValues(arr);
+  return [].map.call(arr, function(n) { return n.toString(16); }).join("");
+}
 
-        var max_score = 0,
-        max_id;        
-        fs.readdirSync("./images/scanned transformed").forEach(function(im){
-          var score = alignator.match(
-            uploadedPath,
-            path.join(__dirname, "images/scanned transformed/")+im,
-            path.join(__dirname, "public/images/"+im.split('.')[0]+'.jpg')
-            );
-          if (score >= max_score){
-            max_score = score;
-            max_id = im.split('.')[0];
-          }
+app.post('/uploadSheet/', nodefu(), function(req, res, next){
+
+  for ( file in req.files) {
+    req.files[file].toFile(path.join(__dirname, 'images/temp_uploaded/'), function(err, uploadedPath){
+      if (!err){
+        var names = alignator.getIdentifiersOnSheet(uploadedPath);
+        
+        res.send({res: 'ok', names : names});
+
+      } else {
+        console.log(err);
+      }
+    })
+  }
+});
+
+
+app.post('/uploadOriginal/', nodefu(), function(req, res, next){
+
+  var queries =[];
+  var fails = [];
+  var id;
+  for ( file in req.files) {
+    req.files[file].toFile(path.join(__dirname, 'images/temp_uploaded/'), function(err, uploadedPath){
+      if (!err){
+        id = alignator.getWarpedLabelFromPath(uploadedPath, path.join(__dirname, 'images/groundtruths/'));
+
+        if(id.search(/error/) != -1){
+          fails.push(path.basename((id.split("|"))[0]));
+        } else {
+          queries.push(id);
+        }
+
+      } else {
+        console.log(err);
+      }
+    })
+  }
+
+  client.connect(mongoLink, function(err, db){
+    if (!err){
+
+      db.collection('entries')
+        .find({"entry": {$in: queries}})
+        .toArray(function(err, results){
+          console.log(results);
+          res.send({res: 'ok', result : results, failed : fails});
         });
 
-        res.send({
-          res : 'ok',
-          score : max_score,
-          file : path.basename(max_id+'.jpg')
-        });            
+    } else {
+      console.log("Connection failed.");
+    }
+  });
+
+});
+
+app.post('/uploadTobeTest/', nodefu(), function(req, res, next){
+  req.files.file_data.toFile(path.join(__dirname, 'images/temp_uploaded/'), function(err, uploadedPath){
+      if(!err){
+
+        var id = alignator.getWarpedLabelFromPath(uploadedPath, path.join(__dirname, 'images/tests/'));
+
+        if(id.search(/error/) != -1){
+
+          res.send({
+            res : 'ok',
+            status : "404"
+          });            
+
+        } else {
+
+          client.connect(mongoLink, function(err, db){
+            if (!err){
+
+              db.collection('entries').findOne({"entry": id}, function(err, doc){
+                var score = alignator.match(
+                  path.join(__dirname, 'images/tests/') + id + ".png",
+                  path.join(__dirname, "images/groundtruths/") + id + ".png",
+                  path.join(__dirname, "public/images/"+id+'.png')
+                  );
+
+                res.send({
+                  res : 'ok',
+                  doc : doc,
+                  score : score,
+                  file : 'images/'+id+'.png'
+                });            
+
+              })
+
+            } else {
+              console.log("Connection failed.");
+            }
+          });
+
+        }
+
       }
     })
 });

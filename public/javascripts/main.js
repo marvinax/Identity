@@ -1,70 +1,6 @@
-(function($) {
-
-	$.fn.visible = function(partial) {
-
-		var $t            = $(this),
-		$w            = $(window),
-		viewTop       = $w.scrollTop(),
-		viewBottom    = viewTop + $w.height(),
-		_top          = $t.offset().top,
-		_bottom       = _top + $t.height(),
-		compareTop    = partial === true ? _bottom : _top,
-		compareBottom = partial === true ? _top : _bottom;
-
-		return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
-
-	};
-
-})(jQuery);
-
-// For QR functionality
-qrcode = new QRCode(document.getElementById("qrcode"));
-
-var canvas = $('canvas#drawingArea').get(0);
-	canvas.height = 460;
-	canvas.width = 160;
-	canvas.style.height = 460;
-	canvas.style.width = 160;
-
-var ctx = canvas.getContext('2d');
-	if(window.devicePixelRatio != 1){	
-		$(canvas)
-			.attr("width", ctx.canvas.width * window.devicePixelRatio)
-			.attr("height", ctx.canvas.height * window.devicePixelRatio)
-	}
-
-
-function redraw(ctx, img, ratio){	
-
-	ctx.lineWidth=2;
-	for(var i = 0; i < 4; i++){		
-		ctx.beginPath();
-		ctx.arc(15*ratio, (30 + i*130) * ratio ,(10 + ((i+1)%2) * 3) * ratio,0,2*Math.PI);
-		ctx.stroke();
-		ctx.beginPath();
-		ctx.arc(145*ratio, (30 + i*130) * ratio, 10*ratio, 0, 2*Math.PI);
-		ctx.stroke();
-	}
-
-	ctx.beginPath();
-	ctx.moveTo(15*ratio,  30*ratio);
-	ctx.lineTo(15*ratio,  420*ratio);
-	ctx.lineTo(145*ratio, 420*ratio);
-	ctx.lineTo(145*ratio, 30*ratio);
-	ctx.lineTo(15*ratio,  30*ratio);
-	ctx.moveTo(15*ratio,  160*ratio);
-	ctx.lineTo(145*ratio, 160*ratio);
-	ctx.moveTo(15*ratio,  290*ratio);
-	ctx.lineTo(145*ratio, 290*ratio);
-	ctx.stroke();
-	ctx.drawImage(img, 25*ratio, 170*ratio, 110*ratio, 110*ratio);
-}
-
-function generateId(len) {
-	var arr = new Uint8Array((len || 40) / 2);
-	window.crypto.getRandomValues(arr);
-	return [].map.call(arr, function(n) { return n.toString(16); }).join("");
-}
+// var $ = require('jquery');
+var pufpatch = require('./pufpatch')
+var fileinput = require('./vendors/fileinput.min.js');
 
 /* smooth scrolling sections */
 $('#qr').click(function() {
@@ -81,16 +17,71 @@ $('#upload-orig').click(function() {
 	return false;
 });
 
+$('#upload-test').click(function() {
+	$('html,body').animate({
+		scrollTop: $('#' + $(this).attr("target")).offset().top
+	}, 300);
+	return false;
+});
+
+
+$('#generate-qr').click(function(){
+	var copies = $('#copies').val();
+	// console.log(pufpatch);
+	var ids = pufpatch.save();
+
+	$.get("/createEntries/", {
+		type : $('#type').val(),
+		isbn : $('#isbn').val(),
+		author : $('#author').val(),
+		print : $('#print').val(),
+		amount : $('#amount').val(),
+		edition : $('#edition').val(),
+		ids : ids
+	})
+})
+
+
+$('#upload-sheet').fileinput({
+	uploadUrl: '/uploadSheet/',
+	uploadAsyc : true,
+	showPreview: false,
+	showCaption: false,
+	browseLabel: "上传原始标签打印页 (仅供调试)",
+	browseClass: "btn btn-success"	
+}).on('filebatchuploadsuccess', function(event, data, previewID, index){
+	var names = data.response.names;
+
+	$.get("/createEntries/", {
+		title : $('#type').val(),
+		isbn : $('#isbn').val(),
+		author : $('#author').val(),
+		print : $('#print').val(),
+		amount : $('#amount').val(),
+		edition : $('#edition').val(),
+		ids : names
+	})
+
+});
 
 $("#upload-original").fileinput({
 	uploadUrl: '/uploadOriginal/',
 	uploadAsyc : true,
 	showPreview: false,
-	showCaption: false,
+	// showCaption: false,
 	browseLabel: "上传原始标签",
-	browseClass: "btn btn-primary btn-lg"
+	browseClass: "btn btn-primary"
 }).on('filebatchuploadsuccess', function(event, data, previewID, index){
-	$().after('<span>'+data.response.file+' '+data.response.score+'</span>');
+	var successResult = data.response.result;
+	var success = successResult.map(function(e, i){
+		return "编号"+ e.entry +"\n标题: "+ e.type+"\n作者: " + e.author + "\nISBN: " + e.isbn + "\n版次" + e.edition + "\n印次" + e.print
+	}).join("\n\n");
+
+	var failedResult = data.response.failed;
+	var failure = failedResult.join("\n")
+
+	$('#original-result').val(successResult.length+'个标签原始图像成功上传\n\n'+success
+					+"\n\n以下" + failedResult.length + "个标签原始图像无法识别，请检查\n\n" + failure);
 });
 
 $("#upload-tobetest").fileinput({
@@ -99,8 +90,10 @@ $("#upload-tobetest").fileinput({
 	showPreview: false,
 	showCaption: false,
 	browseLabel: "拍摄验证图像",
-	browseClass: "btn btn-primary btn-lg"
+	browseClass: "btn btn-primary"
 }).on('filebatchuploadsuccess', function(event, data, previewID, index){
-	$('body').append('<span>'+data.response.file+' '+data.response.score+'</span>');
-	$('body').append('<img src="/images/'+data.response.file.replace('tif', 'jpg')+'"><p>');
+	var info = data.response.doc;
+	var infoString = "编号"+ info.entry +"\n标题: "+ info.type+"\n作者: " + info.author + "\nISBN: " + info.isbn + "\n版次" + info.edition + "\n印次" + info.print
+	$("#test-info").val(infoString);
+	$('#test-result').html('<img src="'+data.response.file+'"><p><p>'+data.response.file+' '+data.response.score+'</p>');
 });

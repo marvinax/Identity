@@ -7,6 +7,10 @@
 
 #include <iostream>
 
-void removeQRRegion(cv::Mat &image, int radius);
+#include <zbar.h>
 
-void getAnchors(cv::Mat &image, std::vector<cv::Point2f> &centerAnchors);
+using namespace cv;
+using namespace zbar;
+
+void findSingleQR(Mat &image, vector<Point2f> &warpSourcePoints, std::string &data);
+void findMultipleQR(Mat &image, std::string &data);

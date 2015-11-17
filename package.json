@@ -16,7 +16,12 @@
     "nan": "^1.8.4",
     "node-gyp": "^1.0.3",
     "nodefu": "latest",
-    "opencv": "^3.0.0",
-    "serve-favicon": "~2.2.0"
+    "serve-favicon": "~2.2.0",
+    "node-qr-image": "latest",
+    "jszip": "latest",
+    "jquery" : "latest",
+    "filesaver" : "latest",
+
+    "mongodb" : "latest"
   }
 }

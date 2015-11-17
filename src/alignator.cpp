@@ -12,10 +12,10 @@
 #include <iostream>
 #include <math.h>
 
-#include "customResize.h"
 #include "compensateGradient.h"
-#include "QRLocator.h"
 #include "SubPixelWarp.h"
+#include "ZBarQRLocator.h"
+
 
 using namespace v8;
 
@@ -38,21 +38,63 @@ std::vector<cv::Point2f> targetPoints(int rectEdgeLength){
     return targets;
 }
 
-cv::vector<cv::Point2f> targetQRAligners(int centerX, int centerY, int edgeLength){
-    std::vector<cv::Point2f> targets;
+void findQRWarpTargetPoints(std::vector<cv::Point2f> &targets, int centerX, int centerY, int edgeLength){
 
     targets.push_back(cv::Point2f(centerX - edgeLength/2, centerY - edgeLength/2));
     targets.push_back(cv::Point2f(centerX + edgeLength/2, centerY - edgeLength/2));
-    targets.push_back(cv::Point2f(centerX - edgeLength/2, centerY + edgeLength/2));
     targets.push_back(cv::Point2f(centerX + edgeLength/2, centerY + edgeLength/2));
+    targets.push_back(cv::Point2f(centerX - edgeLength/2, centerY + edgeLength/2));
 
+}
 
-    return targets;
+int preWarp(cv::Mat &source, cv::Mat &target, std::string &data, int margin, int QREdgeLength){
+
+    // Find the source and target points to perform the QR-based warping.
+    cv::vector<cv::Point2f> warpSourcePoints, warpTargetPoints;
+
+    findSingleQR( source, warpSourcePoints, data );
+    findQRWarpTargetPoints( warpTargetPoints, int(target.cols/2 - margin), int(target.rows/2), QREdgeLength );
+    
+    if (warpSourcePoints.size() != 4){
+        std::cout << "QR code not recognized, pre-warping cancelled." << std::endl;
+        return -1;
+    }
+
+    std::cout << warpSourcePoints << warpTargetPoints << std::endl;
+
+    cv::Mat trans = cv::findHomography( warpSourcePoints, warpTargetPoints );
+    cv::warpPerspective(source, target, trans, cv::Size_<int>(target.cols - margin * 2, target.rows) );
+
+    cv::imwrite("./public/images/warped.jpg", target);
+
+    // Remove the QR area
+    int left = (int)(target.cols - QREdgeLength)/2, top = (int)(target.rows - QREdgeLength)/2;
+    cv::Mat QRArea = cv::Mat(target, cv::Rect(left, top, QREdgeLength, QREdgeLength));
+
+    double min, max;
+    cv::minMaxLoc(target, &min, &max);
+    QRArea = max;
+
+    return 0;
+}
+
+void fineWarp(cv::Mat &source, cv::Mat &target){
+    cv::vector<cv::Point2f> anchors;
+    getAnchors(source, anchors);
+
+    cv::Mat trans;
+    trans = cv::findHomography(anchors, targetPoints(200));
+    cv::warpPerspective(source, source, trans, cv::Size_<int>(200, 600));
+    cv::imwrite("./public/images/fine-warped.jpg", source);
+
+    source.copyTo(target);
+
 }
 
 // Apply the inversed perspective transfrom to get the original
-// label.
-void getWarpedLabel(cv::Mat &image){
+// label. The immediate images shouldn't be used in productized
+// version.
+int getWarpedLabel(cv::Mat &image, std::string &data){
 
     // Preprocess the original image.
     cv::Mat original;
@@ -63,74 +105,57 @@ void getWarpedLabel(cv::Mat &image){
     compensateGradient(original, compensated, 64, CUSTOM_RESIZE_MAX, 1);
     cv::imwrite("./public/images/compensated.jpg", compensated);
     
-    int margin = 400;
     compensated.convertTo(compensated, CV_8U);
-    cv::Mat trans = cv::findHomography(
-        findQRAlignMarker(compensated),
-        targetQRAligners(int(compensated.cols/2 - margin), int(compensated.rows/2), 800)
-    );
-    cv::warpPerspective(compensated, compensated, trans,
-        cv::Size_<int>(compensated.cols - margin * 2, compensated.rows)
-    );
+
+    // Create a new Image/Matrix instance with unified size to
+    // handle the original image with different size.
+    int margin = 400;
+    int QREdgeLength = 800;
+    cv::Mat warped(3624, 2448, CV_8U);
     
-    int left = (int)(compensated.cols/2 - 400), top = (int)((compensated.rows/2) - 400);
-    cv::Mat QRArea = cv::Mat(compensated, cv::Rect(left, top, 800, 800));
+    if( preWarp(compensated, warped, data, margin, QREdgeLength) == -1){
+        std::cout << "Warping stopped." << std::endl;
+        return -1;
+    };
 
-    double min, max;
-    cv::minMaxLoc(compensated, &min, &max);
-    QRArea = max;
+    resize(warped, warped, cv::Size(warped.cols/3, warped.rows/3), cv::INTER_CUBIC);
 
-    cv::imwrite("./public/images/warped.jpg", compensated);
+    fineWarp(warped, image);
 
-    cv::Mat forLines;
-    resize(compensated, compensated, cv::Size(compensated.cols/3, compensated.rows/3), cv::INTER_CUBIC);
-    compensated.copyTo(forLines);
-    removeQRRegion(forLines, 3);
-    cv::threshold(forLines, forLines, 20, 255, cv::THRESH_BINARY);
-    
+    return 0;
+}
 
-    cv::Mat lines;
-    cv::HoughLinesP(forLines, lines, 1, CV_PI/180, 10, 30);
-    lines = lines.reshape(0, lines.cols);
-    
-    
-    // for( size_t i = 0; i < lines.size(); i++ )
-    // {
-    //     cv::Vec4i l = lines[i];
-    //     line( compensated, cv::Point(l[0], l[1]), cv::Point(l[2], l[3]), cv::Scalar(0), 5, CV_AA);
-    // }
+NAN_METHOD(GetIdentifiersOnSheet){
 
-    std::vector<cv::Point2f> anchors = getAnchors(lines);
-    
-    cv::Mat labels, centerAnchors;
-    cv::Mat anchor_matrix(anchors);
+    std::string imageFullPath(*NanAsciiString(args[0])); 
 
-    cv::kmeans(anchor_matrix, 8, labels, cv::TermCriteria(CV_TERMCRIT_ITER|CV_TERMCRIT_EPS, 10000, 0.0001), 8, cv::KMEANS_PP_CENTERS, centerAnchors);
+    cv::Mat image = cv::imread(imageFullPath, CV_LOAD_IMAGE_GRAYSCALE);
 
-    std::vector<cv::Point2f> centerAnchorsVector;
+    std::string data;
+    findMultipleQR(image, data);
 
-    trans = cv::findHomography(reformPoints(centerAnchors), targetPoints(200));
-    cv::warpPerspective(compensated, compensated, trans, cv::Size_<int>(200, 600));
-    cv::imwrite("./public/images/fine-warped.jpg", compensated);
-
-    compensated.copyTo(image);
+    NanReturnValue(NanNew<v8::String>(data));
 }
 
 
 NAN_METHOD(GetWarpedLabelFromPath){
 
-    std::string imagePath(*NanAsciiString(args[0])); 
+    std::string imageFullPath(*NanAsciiString(args[0])); 
     std::string exportPath(*NanAsciiString(args[1])); 
 
-    cv::Mat image = cv::imread(imagePath, CV_LOAD_IMAGE_GRAYSCALE);
+    cv::Mat image = cv::imread(imageFullPath, CV_LOAD_IMAGE_GRAYSCALE);
     cv::Mat mask = cv::imread("images/mask.png", CV_LOAD_IMAGE_GRAYSCALE); // to be changed to a local path
 
-    getWarpedLabel(image);
-    image = image(cv::Range(400, 600), cv::Range(0, 200));
-    bitwise_and(image, mask, image);
+    std::string data;
+    if (getWarpedLabel(image, data) == -1){
+        data = imageFullPath + "|error";
+    } else {
+        image = image(cv::Range(400, 600), cv::Range(0, 200));
+        bitwise_and(image, mask, image);
+        cv::imwrite(exportPath + data + ".png", image);
+    }
 
-    cv::imwrite(exportPath, image);
-    NanReturnUndefined();
+    NanReturnValue(NanNew<v8::String>(data));
 }
 
 NAN_METHOD(Match){
@@ -200,6 +225,7 @@ NAN_METHOD(Match){
 
 void Init(Handle<Object> exports) {
     exports->Set(NanNew("getWarpedLabelFromPath"), NanNew<FunctionTemplate>(GetWarpedLabelFromPath)->GetFunction());
+    exports->Set(NanNew("getIdentifiersOnSheet"), NanNew<FunctionTemplate>(GetIdentifiersOnSheet)->GetFunction());
     exports->Set(NanNew("match"), NanNew<FunctionTemplate>(Match)->GetFunction());
 }
 

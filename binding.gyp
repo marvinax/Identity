@@ -6,7 +6,7 @@
 			"src/alignator.cpp",
 			"src/customResize.cpp",
 			"src/compensateGradient.cpp",
-			"src/QRLocator.cpp",
+			"src/ZBarQRLocator.cpp",
 			"src/SubPixelWarp.cpp"
 		],
 		"include_dirs" : [
@@ -15,7 +15,8 @@
 			"/Applications/MATLAB_R2014b.app/toolbox/vision/visionrt/export/include/visionrt/"
 		],
 		"libraries": [
-			"<!@(pkg-config --libs opencv)"
+			"<!@(pkg-config --libs opencv)",
+			"<!@(pkg-config --libs zbar)"
 		],
 		"conditions": [
               [ 'OS=="mac"', {
