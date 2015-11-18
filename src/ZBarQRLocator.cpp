@@ -1,6 +1,6 @@
 #include "ZBarQRLocator.h"
 
-void findSingleQR(Mat &source, vector<Point2f> &warpSourcePoints, std::string &data){
+void findSingleQR(Mat &source, std::vector<Point2f> &warpSourcePoints, std::string &data){
 
     cv::Mat image;
     threshold(source, image, 128, 255, THRESH_BINARY);
@@ -36,4 +36,5 @@ void findMultipleQR(Mat &image, std::string &data){
         name += symbol->get_data() + " ";
     }
 
+    data = name;
 }

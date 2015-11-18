@@ -31,7 +31,7 @@ $('#generate-qr').click(function(){
 	var ids = pufpatch.save();
 
 	$.get("/createEntries/", {
-		type : $('#type').val(),
+		title : $('#title').val(),
 		isbn : $('#isbn').val(),
 		author : $('#author').val(),
 		print : $('#print').val(),
@@ -53,7 +53,7 @@ $('#upload-sheet').fileinput({
 	var names = data.response.names;
 
 	$.get("/createEntries/", {
-		title : $('#type').val(),
+		title : $('#title').val(),
 		isbn : $('#isbn').val(),
 		author : $('#author').val(),
 		print : $('#print').val(),

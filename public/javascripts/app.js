@@ -77,7 +77,7 @@
 		var ids = pufpatch.save();
 
 		$.get("/createEntries/", {
-			type : $('#type').val(),
+			title : $('#title').val(),
 			isbn : $('#isbn').val(),
 			author : $('#author').val(),
 			print : $('#print').val(),
@@ -99,7 +99,7 @@
 		var names = data.response.names;
 
 		$.get("/createEntries/", {
-			title : $('#type').val(),
+			title : $('#title').val(),
 			isbn : $('#isbn').val(),
 			author : $('#author').val(),
 			print : $('#print').val(),
@@ -143,6 +143,7 @@
 		$("#test-info").val(infoString);
 		$('#test-result').html('<img src="'+data.response.file+'"><p><p>'+data.response.file+' '+data.response.score+'</p>');
 	});
+
 
 /***/ },
 /* 1 */

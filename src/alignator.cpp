@@ -1,14 +1,18 @@
+
+// For Node Native
 #include <node.h>
 #include <v8.h>
 #include <nan.h>
 
-#include <opencv2/core/core.hpp>
-#include <opencv2/imgproc/imgproc.hpp>
-#include <opencv2/calib3d/calib3d.hpp>
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/features2d/features2d.hpp>
-#include <opencv2/nonfree/features2d.hpp>
+// For OpenCV
+#include <opencv2/core.hpp>
+#include <opencv2/imgproc.hpp>
+#include <opencv2/calib3d.hpp>
+#include <opencv2/highgui.hpp>
+#include <opencv2/features2d.hpp>
+#include <opencv2/xfeatures2d.hpp>
 
+// For life-easing
 #include <iostream>
 #include <math.h>
 
@@ -18,7 +22,7 @@
 
 
 using namespace v8;
-
+using namespace cv::xfeatures2d;
 
 // The "ideal" coordinate of the anchor points, which will be used
 // in the inverse perspective transforming (a.k.a "warping")
@@ -50,7 +54,7 @@ void findQRWarpTargetPoints(std::vector<cv::Point2f> &targets, int centerX, int 
 int preWarp(cv::Mat &source, cv::Mat &target, std::string &data, int margin, int QREdgeLength){
 
     // Find the source and target points to perform the QR-based warping.
-    cv::vector<cv::Point2f> warpSourcePoints, warpTargetPoints;
+    std::vector<cv::Point2f> warpSourcePoints, warpTargetPoints;
 
     findSingleQR( source, warpSourcePoints, data );
     findQRWarpTargetPoints( warpTargetPoints, int(target.cols/2 - margin), int(target.rows/2), QREdgeLength );
@@ -79,7 +83,7 @@ int preWarp(cv::Mat &source, cv::Mat &target, std::string &data, int margin, int
 }
 
 void fineWarp(cv::Mat &source, cv::Mat &target){
-    cv::vector<cv::Point2f> anchors;
+    std::vector<cv::Point2f> anchors;
     getAnchors(source, anchors);
 
     cv::Mat trans;
@@ -176,16 +180,16 @@ NAN_METHOD(Match){
     // with variance of Gaussian filter of the Hessian
     // Matrix. Low down the threshhold to include more
     // matchings.
-    cv::SurfFeatureDetector detector( 200 );
+    Ptr<SurfFeatureDetector> detector = SurfFeatureDetector::create( 200 );
     std::vector<cv::KeyPoint> inputKeyPoints, truthKeyPoints;
-    detector.detect( input, inputKeyPoints);
-    detector.detect( truth, truthKeyPoints );
+    detector -> detect( input, inputKeyPoints );
+    detector -> detect( truth, truthKeyPoints );
     
     // Extract descriptor from features
-    cv::SurfDescriptorExtractor extractor;
+    Ptr<SurfDescriptorExtractor> extractor = SurfDescriptorExtractor::create();
     cv::Mat inputDesc, truthDesc;
-    extractor.compute(input, inputKeyPoints, inputDesc);
-    extractor.compute(truth, truthKeyPoints, truthDesc);
+    extractor -> compute(input, inputKeyPoints, inputDesc);
+    extractor-> compute(truth, truthKeyPoints, truthDesc);
     
     // Initate FLANN based matcher and perform the
     // matching.
